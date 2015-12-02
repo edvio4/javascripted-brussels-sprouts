@@ -29,11 +29,11 @@
     </style>
   </head>
 
-  <body onLoad='makelist()'>
+  <body >
     <div class="container">
       <h2>Good Dishes</h2>
 
-      <ul id="dishes" >
+      <ul id="dishes">
       </ul>
 
       <hr />
@@ -42,7 +42,7 @@
       <form id="dish-form" action="/dishes">
         <label for="dish-name">Dish name</label>
         <input id="dish-name" type="text" name="dish_name" value='' onClick="Clear(this)"/>
-        <input id="dish-submit" type="submit" value="Submit" onClick="addRecipe(this.form)"/>
+        <input id="dish-submit" type="submit" value="Submit"/>
       </form>
 
       <hr />

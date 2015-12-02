@@ -1,4 +1,10 @@
+window.onload = function() {
+  makelist();
+  document.getElementById('dish-form').addEventListener('submit', addRecipe);
+}
+
 function makelist(){
+  console.log("hi");
   var goodDishes, badDishes;
   var dishes = [
     "Roasted Brussels Sprouts",
@@ -28,22 +34,20 @@ function makelist(){
 
   for( var i =  0 ; i < goodDishes.length ; i++) {
     var listRecipe = document.createElement("li");
+    console.log(listRecipe);
     listRecipe.innerHTML = goodDishes[i];
     document.getElementsByTagName("ul")[0].appendChild(listRecipe);
+    console.log(document.getElementsByTagName("ul")[0]);
   }
 
-  function stopDefAction(evt) {
-    evt.preventDefault();
-  }
-
-  document.getElementById('dish-submit').addEventListener('click', stopDefAction, false);
 }
 
-function addRecipe(form) {
-var new_recipe = form.dish_name.value;
-var listRecipe = document.createElement("li");
-listRecipe.innerHTML = new_recipe;
-document.getElementsByTagName("ul")[0].appendChild(listRecipe);
+function addRecipe(evt) {
+  evt.preventDefault();
+  var new_recipe = this.dish_name.value;
+  var listRecipe = document.createElement("li");
+  listRecipe.innerHTML = new_recipe;
+  document.getElementsByTagName("ul")[0].appendChild(listRecipe);
 }
 
 function Clear(obj) {
